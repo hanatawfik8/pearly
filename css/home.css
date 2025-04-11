@@ -115,6 +115,14 @@ body {
   align-items: flex-start;
 }
 
+.info-box img {
+  transition: 0.2s ease;
+}
+
+.info-box img:hover {
+  transform: scale(1.05);
+}
+
 .info-text {
   margin-left: 1rem;
 }
@@ -199,7 +207,9 @@ body {
 }
 
 .contact-home,
-.book-btn {
+.book-btn,
+.phone-btn,
+.blue-section-book-btn {
   border-radius: 6px;
   font-size: 1.1rem;
   width: auto;
@@ -215,7 +225,8 @@ body {
   padding-block: 40px;
 }
 
-#services h2 {
+#services h2,
+#booking-section h2 {
   width: 600px;
   font-size: 50px;
   line-height: 50px;
@@ -276,6 +287,62 @@ body {
   bottom: -23px;
   right: 14px;
   transform: rotate(180deg);
+}
+
+/*  */
+
+/* Booking Section */
+
+#booking-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/white-geometry.svg"),
+    linear-gradient(var(--third-text-color), var(--third-text-color));
+  text-align: center;
+
+  padding-block: 200px;
+}
+
+#booking-section h2 {
+  color: var(--sec-text-color);
+}
+
+#booking-section p {
+  color: var(--sec-text-color);
+  opacity: 0.8;
+  width: 600px;
+  font-size: 22px;
+  line-height: 28px;
+  margin-block: 25px;
+}
+
+.phone-btn a,
+.phone-btn i {
+  color: var(--sec-text-color);
+}
+
+.blue-section-book-btn {
+  background-color: var(--sec-text-color);
+  margin-top: 20px;
+}
+
+.blue-section-book-btn a,
+.blue-section-book-btn i {
+  color: var(--main-site-color);
+}
+
+#booking-section i {
+  margin-right: 6px;
+}
+
+#booking-section button {
+  padding: 1.2rem 3rem;
+}
+
+#booking-section button:hover {
+  opacity: 0.7;
 }
 
 /*  */
