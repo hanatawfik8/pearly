@@ -339,10 +339,36 @@ body {
 
 #booking-section button {
   padding: 1.2rem 3rem;
+  width: fit-content;
 }
 
 #booking-section button:hover {
   opacity: 0.7;
+}
+
+.btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*  */
+
+/* Animate on Scroll */
+
+.hidden {
+  opacity: 0;
+  transform: translateX(-30%);
+  transition: opacity 0.8s, transform 0.8s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.info-boxes {
+  transform: translateY(-100px);
 }
 
 /*  */

@@ -14,19 +14,23 @@
   </head>
   <body>
     <nav class="container">
-      <img src="./images/pearly-logo.svg" alt="Pearly Site Logo" />
+      <img
+        loading="lazy"
+        src="./images/pearly-logo.svg"
+        alt="Pearly Site Logo"
+      />
       <ul class="nav-links">
         <a class="active-link" href="#home">Home</a>
-        <img src="./images/yellow-dot.svg" alt="Divider" />
+        <img loading="lazy" src="./images/yellow-dot.svg" alt="Divider" />
         <a href="#about-us">About Us</a>
-        <img src="./images/yellow-dot.svg" alt="Divider" />
+        <img loading="lazy" src="./images/yellow-dot.svg" alt="Divider" />
         <a href="#services">Services</a>
       </ul>
       <button class="contact">Contact Us</button>
     </nav>
     <main class="container">
-      <section id="home">
-        <div class="home">
+      <section id="home ">
+        <div class="home hidden">
           <div class="hero-text text-container">
             <p class="sub-heading">YOUR NEIGHBORHOOD OFFICE -</p>
             <h1>Our Dentist Cares For Your Pearly Whites.</h1>
@@ -43,16 +47,16 @@
             <img src="./images\dentist-3.2.png" alt="Dentist" />
           </div>
         </div>
-        <section class="info-boxes">
+        <section class="info-boxes hidden">
           <div class="info-box">
-            <img src="./images/Phone -Icon.svg" alt="phone" />
+            <img loading="lazy" src="./images/Phone -Icon.svg" alt="phone" />
             <div class="info-text">
               <h3>Contact us</h3>
               <p>555-555-5555 <br />info@pearly.dental</p>
             </div>
           </div>
           <div class="info-box">
-            <img src="./images/Clock-Icon.svg" alt="clock" />
+            <img loading="lazy" src="./images/Clock-Icon.svg" alt="clock" />
             <div class="info-text">
               <h3>Our Hours</h3>
               <p>
@@ -63,7 +67,11 @@
             </div>
           </div>
           <div class="info-box">
-            <img src="./images/Location-Icon.svg" alt="Location" />
+            <img
+              loading="lazy"
+              src="./images/Location-Icon.svg"
+              alt="Location"
+            />
             <div class="info-text">
               <h3>Location</h3>
               <p>
@@ -77,10 +85,10 @@
       </section>
       <section id="about-us">
         <div class="about-us">
-          <div class="img-container">
-            <img src="images/patient -1.jpg" alt="Patient" />
+          <div class="img-container hidden">
+            <img loading="lazy" src="images/patient -1.jpg" alt="Patient" />
           </div>
-          <div class="text-container">
+          <div class="text-container hidden">
             <h2>Your Trusted Hometown Dentist</h2>
             <p>
               John Smith founded Pearly in 2001 after marrying his high school
@@ -95,35 +103,43 @@
       </section>
       <section id="services">
         <div class="services-container">
-          <h2>Dental Services That Will Brighten Your Day</h2>
+          <h2 class="hidden">Dental Services That Will Brighten Your Day</h2>
           <div class="services-wrap">
-            <div class="card">
-              <img src="./images/whitening.svg" alt="whitening" />
+            <div class="card hidden">
+              <img
+                loading="lazy"
+                src="./images/whitening.svg"
+                alt="whitening"
+              />
               <h3>Whitening</h3>
               <p>Brighten your smile and remedy discolored teeth.</p>
             </div>
-            <div class="card">
-              <img src="./images/bonding.svg" alt="Bonding" />
+            <div class="card hidden">
+              <img loading="lazy" src="./images/bonding.svg" alt="Bonding" />
               <h3>Bonding</h3>
               <p>Repair small chips and cracks with bonding.</p>
             </div>
-            <div class="card">
-              <img src="./images/implants.svg" alt="implants" />
+            <div class="card hidden">
+              <img loading="lazy" src="./images/implants.svg" alt="implants" />
               <h3>Implants</h3>
               <p>Get long-lasting tooth replacement with implants.</p>
             </div>
-            <div class="card">
-              <img src="./images/filling.svg" alt="filling" />
+            <div class="card hidden">
+              <img loading="lazy" src="./images/filling.svg" alt="filling" />
               <h3>Filling</h3>
               <p>Strengthen and rejuvenate your teeth with fillings.</p>
             </div>
-            <div class="card">
-              <img src="./images/crown.svg" alt="crown" />
+            <div class="card hidden">
+              <img loading="lazy" src="./images/crown.svg" alt="crown" />
               <h3>Crowns</h3>
               <p>Replace lost tooth structure with dental crowns.</p>
             </div>
-            <div class="card">
-              <img src="./images/root-canal.svg" alt="root-canal" />
+            <div class="card hidden">
+              <img
+                loading="lazy"
+                src="./images/root-canal.svg"
+                alt="root-canal"
+              />
               <h3>Root Canal</h3>
               <p>Cure your infection and return to normal with a root canal.</p>
             </div>
@@ -133,20 +149,26 @@
     </main>
 
     <section id="booking-section">
-      <h2>Book Your Appointment Today!</h2>
-      <p>
-        We can’t wait to see your shining smile! Contact us below by phone or
-        booking page, and we’ll be in touch with you right away.
-      </p>
-
-      <button class="phone-btn">
-        <a href=""><i class="fa-solid fa-phone-volume"></i> (555) 555-5555</a>
-      </button>
-      <button class="blue-section-book-btn">
-        <a href=""
-          ><i class="fa-solid fa-right-to-bracket"></i> Go To Booking Page</a
-        >
-      </button>
+      <div class="hidden">
+        <h2>Book Your Appointment Today!</h2>
+        <p>
+          We can’t wait to see your shining smile! Contact us below by phone or
+          booking page, and we’ll be in touch with you right away.
+        </p>
+        <div class="btns">
+          <button class="phone-btn">
+            <a href=""
+              ><i class="fa-solid fa-phone-volume"></i> (555) 555-5555</a
+            >
+          </button>
+          <button class="blue-section-book-btn">
+            <a href=""
+              ><i class="fa-solid fa-right-to-bracket"></i> Go To Booking
+              Page</a
+            >
+          </button>
+        </div>
+      </div>
     </section>
 
     <footer class="container">
@@ -282,5 +304,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="./js/home.js"></script>
   </body>
 </html>
