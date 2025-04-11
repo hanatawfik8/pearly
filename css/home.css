@@ -43,6 +43,97 @@ body {
 
 /*  */
 
+/* hero section */
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5rem;
+  padding-top: 30px;
+  padding-bottom: 70px;
+}
+
+.home p:not(.sub-heading) {
+  color: rgb(59, 85, 123);
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.sub-heading {
+  font-size: 18px;
+  color: var(--main-site-color);
+  line-height: 28px;
+}
+
+.book-btn {
+  margin-top: 20px;
+}
+
+.book-btn a {
+  color: var(--sec-text-color);
+}
+
+.info-boxes {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  border-radius: 10px;
+  width: fit-content;
+  margin: auto;
+  column-gap: 4rem;
+  padding: 60px 40px;
+  transform: translateY(-100px);
+  box-shadow: 0 0 5px #54575a1f;
+  position: relative;
+  z-index: 1;
+}
+
+.info-boxes::before,
+.info-boxes::after {
+  position: absolute;
+  content: "";
+  background-image: url("../images/left-edge-dots.svg");
+  z-index: -1;
+  width: 90px;
+  height: 100px;
+}
+
+.info-boxes::before {
+  top: -23px;
+  left: -24px;
+}
+
+.info-boxes::after {
+  bottom: -23px;
+  right: -24px;
+  transform: rotate(180deg);
+}
+
+.info-box {
+  display: flex;
+  align-items: flex-start;
+}
+
+.info-text {
+  margin-left: 1rem;
+}
+
+.info-text h3 {
+  font-size: 22px;
+  line-height: 36px;
+  font-weight: 600;
+  color: var(--third-text-color);
+}
+.info-text p {
+  color: rgb(59, 85, 123);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 25px;
+}
+
+/*  */
+
 /* about us */
 
 .about-us {
@@ -56,10 +147,11 @@ body {
   width: 35%;
   height: 550px;
   position: relative;
+  z-index: 0;
 }
 
-.img-container::before,
-.img-container::after {
+.about-us .img-container::before,
+.about-us .img-container::after {
   position: absolute;
   content: "";
   background-image: url("../images/horizontal-dots.svg");
@@ -90,9 +182,11 @@ body {
   width: 50%;
 }
 
-.about-us h2 {
+.about-us h2,
+.home h1 {
   font-size: 54px;
   line-height: 50px;
+  font-weight: 700;
   color: var(--third-text-color);
 }
 .about-us p {
@@ -102,7 +196,8 @@ body {
   line-height: 28px;
 }
 
-.contact-home {
+.contact-home,
+.book-btn {
   border-radius: 6px;
   font-size: 1.1rem;
   width: auto;
