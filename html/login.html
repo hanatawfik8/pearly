@@ -12,10 +12,10 @@
     <main>
       <div class="card">
         <h1>LOG IN</h1>
-        <form>
+        <form action="/pearly/php/login.php" method="POST">
           <div class="field-container">
             <label for="email">Email Address</label>
-            <input type="email" id="email" placeholder="Enter Your Email" />
+            <input type="email" id="email" placeholder="Enter Your Email" name="email" />
           </div>
           <div class="field-container">
             <label for="password">Password</label>
@@ -23,10 +23,11 @@
               type="password"
               id="password"
               placeholder="Enter Your Password"
+              name="password"
             />
           </div>
 
-          <button type="button">LOG IN</button>
+          <button type="submit" name="submit">LOG IN</button>
         </form>
       </div>
     </main>

@@ -26,13 +26,14 @@
     <main>
       <div class="card">
         <h1>Sign Up</h1>
-        <form>
+        <form action="/pearly/php/register.php" method="POST">
           <div class="field-container">
             <label for="first-name">First Name</label>
             <input
               type="text"
               id="first-name"
               placeholder="Enter Your First Name"
+              name="first_name"
             />
             <div class="signNameAlert alert" role="alert">hello</div>
           </div>
@@ -42,11 +43,12 @@
               type="text"
               id="last-name"
               placeholder="Enter Your Last Name"
+              name="last_name"
             />
           </div>
           <div class="field-container">
             <label for="email">Email Address</label>
-            <input type="email" id="email" placeholder="Enter Your Email" />
+            <input type="email" id="email" placeholder="Enter Your Email" name="email"/>
           </div>
           <div class="field-container">
             <label for="password">Password</label>
@@ -54,6 +56,7 @@
               type="password"
               id="password"
               placeholder="Enter Your Password"
+              name="password"
             />
             <i class="fa-solid fa-eye"></i>
           </div>
@@ -72,9 +75,10 @@
               type="tel"
               id="phone"
               placeholder="Enter Your Phone Number"
+              name="phone"
             />
           </div>
-          <button type="button">Submit</button>
+          <button type="submit" name="submit">Submit</button>
         </form>
       </div>
     </main>
