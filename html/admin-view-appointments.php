@@ -52,7 +52,7 @@
                   <span class="custom-arrow"></span>
                 </div>
               </td>
-              <td><button class="update-btn">Update</button></td>
+              <td><a href="../php/edit-appointment.php?id=<?= $appt['appointment_id'] ?>"><button class="update-btn">Update</button></a></td>
             </tr>
           <?php endforeach; ?>
         <?php else: ?>
