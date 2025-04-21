@@ -7,6 +7,10 @@
   --third-text-color: #102b4e;
   --main-site-color: #253bab;
   --placeholder-text-color: #54575a;
+  --invalid-border: #dc3546b2;
+  --invalid-shadow: #ffc5c9c0;
+  --valid-border: #19875485;
+  --valid-shadow: #c5e1d4a9;
 }
 
 *,
@@ -82,7 +86,6 @@ main {
   background-color: white;
   padding: 1.3rem 1.6rem;
   box-shadow: 0 0 6px rgba(128, 128, 128, 0.192);
-  text-align: center;
   width: 500px;
 }
 
@@ -90,6 +93,7 @@ h1 {
   font-weight: 600;
   font-size: 1.8rem;
   padding-bottom: 20px;
+  text-align: center;
 }
 
 button {
@@ -134,6 +138,7 @@ input {
   color: var(--main-text-color);
   border-radius: 2px;
   transition: 0.1s ease-in;
+  padding-right: 40px;
 }
 
 input:focus {
@@ -141,12 +146,63 @@ input:focus {
   box-shadow: 0 0 0 0.25rem #253bab23;
 }
 
-.fa-eye,
-.fa-eye-slash {
+.card i {
   position: absolute;
   right: 12px;
   top: 42px;
+}
+
+.fa-eye,
+.fa-eye-slash {
   color: var(--placeholder-text-color);
+  cursor: pointer;
+}
+
+.to-login-or-signup {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.to-login-or-signup a {
+  color: var(--main-site-color);
+}
+
+.to-login-or-signup a:hover {
+  text-decoration: underline;
+}
+
+.invalid {
+  border-color: var(--invalid-border) !important;
+}
+
+.invalid:focus {
+  box-shadow: 0 0 0 0.2rem var(--invalid-shadow);
+}
+
+.fa-circle-exclamation {
+  color: #dc3546;
+}
+
+.valid {
+  border-color: var(--valid-border) !important;
+}
+
+.valid:focus {
+  box-shadow: 0 0 0 0.25rem var(--valid-shadow);
+}
+
+.fa-circle-check {
+  color: #198754;
+}
+
+.alert {
+  background-color: #ffc5c98f;
+  color: #58151c;
+  width: 100%;
+  margin-top: 8px;
+  padding: 6px 12px;
+  border-radius: 2px;
+  display: none;
 }
 
 /*  */
