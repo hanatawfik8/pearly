@@ -23,7 +23,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Use password_verify to check the hashed password
             if (password_verify($password, $user['password'])) {
                 $_SESSION['user'] = $email;
+                $_SESSION['user_id'] = $user['user_id']; // Save their ID
                 $success_message = "Login successful!";
+                // After verifying user login
+
+
                 header("Location: /pearly/index.html");
                 exit;
 
