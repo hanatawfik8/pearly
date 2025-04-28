@@ -20,7 +20,7 @@
     <ul class="nav-links">
       <a href="#" class="active-link">View Appointments</a>
       <img src="../images/yellow-dot.svg" alt="Divider" />
-      <a href="#">Create Appointment</a>
+      <a href="./admin-create-appointment.php">Create Appointment</a>
     </ul>
     <form action="">
       <button type="submit" class="fa-solid fa-right-from-bracket log-out"></button>
@@ -97,15 +97,15 @@
         <ul>
           <li>
             <img src="../images/yellow-dot.svg" class="yellow-dot" />
-            <a href="#">Home</a>
+            <a href="./home.html">Home</a>
           </li>
           <li>
             <img src="../images/yellow-dot.svg" class="yellow-dot" /><a
-              href="#">About Us</a>
+              href="./home.html">About Us</a>
           </li>
           <li>
             <img src="../images/yellow-dot.svg" class="yellow-dot" /><a
-              href="#">Services</a>
+              href="./home.html">Services</a>
           </li>
           <li>
             <img src="../images/yellow-dot.svg" class="yellow-dot" /><a
