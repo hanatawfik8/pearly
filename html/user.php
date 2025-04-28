@@ -45,11 +45,11 @@ $appoint_result = $conn->query($appoint_sql);
       src="../images/pearly-logo.svg"
       alt="Pearly Site Logo" />
     <ul class="nav-links">
-      <a class="active-link" href="../index.html">Home</a>
+      <a class="active-link" href="./home">Home</a>
       <img loading="lazy" src="../images/yellow-dot.svg" alt="Divider" />
-      <a href="../index.html#about-us">About Us</a>
+      <a href="./home">About Us</a>
       <img loading="lazy" src="../images/yellow-dot.svg" alt="Divider" />
-      <a href="../index.html#services">Services</a>
+      <a href="./home">Services</a>
     </ul>
     <div class="right">
         <button class="contact">
