@@ -41,7 +41,8 @@
             <tr>
               <td><?= htmlspecialchars($appt['first_name'] . ' ' . $appt['last_name']) ?></td>
               <td><?= htmlspecialchars($appt['service_name']) ?></td>
-              <td><?= date('Y-m-d h:i A', strtotime($appt['appointment_date'])) ?></td>
+              <td><?= date('Y-m-d h:i A', strtotime($appt['appointment_date'] . ' ' . $appt['appointment_start_time'])) ?></td>
+
               <td>
                 <div class="custom-select">
                   <select name="status" id="status">
