@@ -4,7 +4,7 @@
 session_start();
 
 if (!isset($_SESSION['user_id']) || !isset($_SESSION['user'])) {
-  header("Location: login.html");
+  header("Location: ../index.html");
   exit();
 }
 $user_id = intval($_SESSION['user_id']); // Cast to integer for safety
@@ -45,17 +45,17 @@ $appoint_result = $conn->query($appoint_sql);
       src="../images/pearly-logo.svg"
       alt="Pearly Site Logo" />
     <ul class="nav-links">
-      <a class="active-link" href="./home">Home</a>
+      <a class="active-link" href="../html/home.html">Home</a>
       <img loading="lazy" src="../images/yellow-dot.svg" alt="Divider" />
-      <a href="./home">About Us</a>
+      <a href="../html/home.html#about-us">About Us</a>
       <img loading="lazy" src="../images/yellow-dot.svg" alt="Divider" />
-      <a href="./home">Services</a>
+      <a href="./home.html#services">Services</a>
     </ul>
     <div class="right">
       <button class="contact">
         <a href="mailto:">Contact Us</a>
       </button>
-      <form action="">
+      <form action="../php/logout.php" method="post">
         <button
           type="submit"
           class="fa-solid fa-right-from-bracket log-out"></button>

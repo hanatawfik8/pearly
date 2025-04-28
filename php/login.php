@@ -28,21 +28,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // After verifying user login
 
 
-                header("Location: /pearly/index.html");
-                exit;
+                header("Location:../html/home.html");
+                exit();
 
             } else {
+                $_SESSION['login_error'] = "Invalid email or password.";
                 $error_message = "Invalid email or password.";
-                header("Location: ../html/login.html");
+                header("Location: ../index.html");
             }
         } else {
             $error_message = "Invalid email or password.";
-            header("Location: ../html/login.html");
+            header("Location: ../index.html");
         }
     }
 } else {
     $error_message = "Invalid request.";
-    header("Location: ../html/login.html");
+    header("Location: ../index.html");
 }
 
 // Display messages without redirecting
