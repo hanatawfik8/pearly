@@ -20,7 +20,7 @@
     <ul class="nav-links">
       <a href="#" class="active-link">View Appointments</a>
       <img src="../images/yellow-dot.svg" alt="Divider" />
-      <a href="./admin-create-appointment.php">Create Appointment</a>
+      <a href="./admin-create-appointment.html">Create Appointment</a>
     </ul>
     <form action="">
       <button type="submit" class="fa-solid fa-right-from-bracket log-out"></button>
