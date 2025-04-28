@@ -37,6 +37,7 @@ $conn->close();
   <meta charset="UTF-8">
   <title>Edit Appointment</title>
   <link rel="stylesheet" href="../css/forms.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -65,13 +66,33 @@ $conn->close();
           </div>
 
           <div class="field-container">
-            <label for="service_name">Service:</label>
-            <input type="text" name="service_name" id="service_name" value="<?= htmlspecialchars($appt['service_name']) ?>" required>
+            <label>Service Type</label>
+            <div class="custom-select">
+              <select name="service" id="service">
+                <option value="Whitening">Whitening</option>
+                <option value="Bonding">Bonding</option>
+                <option value="Implants">Implants</option>
+                <option value="Filling">Filling</option>
+                <option value="Crowns">Crowns</option>
+                <option value="Root Canal">Root Canal</option>
+              </select>
+              <span class="custom-arrow"></span>
+            </div>
           </div>
 
           <div class="field-container">
-            <label for="appointment_date">Date & Time:</label>
-            <input type="datetime-local" name="appointment_date" id="appointment_date" value="<?= date('Y-m-d\TH:i', strtotime($appt['appointment_date'])) ?>" required>
+            <label for="date">Appointment Date</label>
+            <input type="date" id="date" name="date" class="booking-inputs" />
+            <i class="fa-solid fa-calendar-days booking-i"></i>
+          </div>
+          <div class="field-container">
+            <label for="time">Appointment Time</label>
+            <div class="custom-select">
+              <select name="time" id="time">
+                <option value="">Select a time slot</option>
+              </select>
+              <span class="custom-arrow"></span>
+            </div>
           </div>
 
           <div class="field-container">
@@ -84,10 +105,18 @@ $conn->close();
           </div>
 
           <button type="submit">Save Changes</button>
+          <button type="button" id="cancelBtn">Cancel</button>
         </form>
       <?php endif; ?>
     </div>
   </main>
+  <script src="../js/get_available_time.js"></script>
+  <script>
+    //handle cancel button
+    $('#cancelBtn').click(function() {
+      window.location.href = '../html/admin-view-appointments.php';
+    });
+  </script>
 </body>
 
 </html>
