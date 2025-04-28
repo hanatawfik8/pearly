@@ -1,202 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="../images/whitening.svg" />
-    <link rel="stylesheet" href="../css/forms.css" />
-    <script
-      src="https://kit.fontawesome.com/32b721850a.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Pearly - Booking</title>
-  </head>
 
-  <body>
-    <nav class="container">
-      <img src="../images/pearly-logo.svg" alt="Pearly Site Logo" />
-      <ul class="nav-links">
-        <a href="#">Home</a>
-        <img src="../images/yellow-dot.svg" alt="Divider" />
-        <a href="#">About Us</a>
-        <img src="../images/yellow-dot.svg" alt="Divider" />
-        <a href="#">Services</a>
-      </ul>
-      <button class="contact">Contact Us</button>
-    </nav>
-    <main>
-      <div class="card">
-        <h1>Book An Appointment</h1>
-        <form action="booking.php" method="POST">
-          <div class="field-container">
-            <label for="date">Appointment Date</label>
-            <input type="date" id="date" name="date" class="booking-inputs" />
-            <i class="fa-solid fa-calendar-days booking-i"></i>
-          </div>
-          <div class="field-container">
-            <label for="time">Appointment Time</label>
-            <div class="custom-select">
-              <select name="time" id="time">
-                <option value="">1:00 PM</option>
-                <option value="">3:00 PM</option>
-                <option value="">5:00 PM</option>
-                <option value="">7:00 PM</option>
-              </select>
-              <span class="custom-arrow"></span>
-            </div>
-          </div>
-          <div class="field-container">
-            <label>Service Type</label>
-            <div class="custom-select">
-              <select name="service" id="service">
-                <option value="Whitening">Whitening</option>
-                <option value="Bonding">Bonding</option>
-                <option value="Implants">Implants</option>
-                <option value="Filling">Filling</option>
-                <option value="Crowns">Crowns</option>
-                <option value="Root Canal">Root Canal</option>
-              </select>
-              <span class="custom-arrow"></span>
-            </div>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../images/whitening.svg" />
+  <link rel="stylesheet" href="../css/forms.css" />
+  <script src="https://kit.fontawesome.com/32b721850a.js" crossorigin="anonymous"></script>
+  <title>Pearly - Booking</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
 
-          <button type="submit">Book Now</button>
+<body>
+  <nav class="container">
+    <img src="../images/pearly-logo.svg" alt="Pearly Site Logo" />
+    <ul class="nav-links">
+      <a href="#">Home</a>
+      <img src="../images/yellow-dot.svg" alt="Divider" />
+      <a href="#">About Us</a>
+      <img src="../images/yellow-dot.svg" alt="Divider" />
+      <a href="#">Services</a>
+    </ul>
+    <button class="contact">Contact Us</button>
+  </nav>
+  <main>
+    <div class="card">
+      <h1>Book An Appointment</h1>
+      <form action="booking.php" method="POST">
+        <div class="field-container">
+          <label for="date">Appointment Date</label>
+          <input type="date" id="date" name="date" class="booking-inputs" />
+          <i class="fa-solid fa-calendar-days booking-i"></i>
+        </div>
+        <div class="field-container">
+          <label for="time">Appointment Time</label>
+          <div class="custom-select">
+            <select name="time" id="time">
+              <option value="">Select a time slot</option>
+            </select>
+            <span class="custom-arrow"></span>
+          </div>
+        </div>
+        <div class="field-container">
+          <label>Service Type</label>
+          <div class="custom-select">
+            <select name="service" id="service">
+              <option value="Whitening">Whitening</option>
+              <option value="Bonding">Bonding</option>
+              <option value="Implants">Implants</option>
+              <option value="Filling">Filling</option>
+              <option value="Crowns">Crowns</option>
+              <option value="Root Canal">Root Canal</option>
+            </select>
+            <span class="custom-arrow"></span>
+          </div>
+        </div>
+
+        <button type="submit">Book Now</button>
+      </form>
+    </div>
+  </main>
+  <footer class="container">
+    <div class="row">
+      <div class="col">
+        <img src="../images/pearly-logo.svg" alt="Pearly Site Logo" />
+        <p class="site-description">
+          Our Dentist Cares For Your Pearly Whites.
+        </p>
+        <div class="icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="col">
+        <h2 class="list-header">Quick Links</h2>
+        <ul>
+          <li>
+            <img src="../images/yellow-dot.svg" class="yellow-dot" />
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <img src="../images/yellow-dot.svg" class="yellow-dot" /><a href="#">About Us</a>
+          </li>
+          <li>
+            <img src="../images/yellow-dot.svg" class="yellow-dot" /><a href="#">Services</a>
+          </li>
+          <li>
+            <img src="../images/yellow-dot.svg" class="yellow-dot" /><a href="#">Book an Appointment</a>
+          </li>
+          <li>
+            <img src="../images/yellow-dot.svg" class="yellow-dot" /><a href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h2 class="list-header">Services</h2>
+        <ul>
+          <li>
+            <img src="../images/yellow-dot.svg" class="yellow-dot" />Whitening
+          </li>
+          <li>
+            <img src="../images/yellow-dot.svg" class="yellow-dot" />Bonding
+          </li>
+          <li>
+            <img src="../images/yellow-dot.svg" class="yellow-dot" />Implants
+          </li>
+          <li>
+            <img src="../images/yellow-dot.svg" class="yellow-dot" />Fillings
+          </li>
+          <li>
+            <img src="../images/yellow-dot.svg" class="yellow-dot" />Crowns
+          </li>
+          <li>
+            <img src="../images/yellow-dot.svg" class="yellow-dot" />Root
+            Canal
+          </li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h2 class="list-header">Support</h2>
+        <ul>
+          <li>
+            <img src="../images/yellow-dot.svg" class="yellow-dot" /><a href="#">Terms of use</a>
+          </li>
+          <li>
+            <img src="../images/yellow-dot.svg" class="yellow-dot" /><a href="#">Privacy</a>
+          </li>
+          <li>
+            <img src="../images/yellow-dot.svg" class="yellow-dot" /><a href="#">FAQs</a>
+          </li>
+          <li>
+            <img src="../images/yellow-dot.svg" class="yellow-dot" /><a href="#">Help</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h2>Get In Touch</h2>
+        <p>Subscribe Our Newsletter To Get Our Latest Updated News!</p>
+        <form class="newsletter-form">
+          <input type="text" placeholder="Your Email" />
+          <button class="send">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </form>
       </div>
-    </main>
-    <footer class="container">
+    </div>
+    <div class="extra-info-section">
       <div class="row">
         <div class="col">
-          <img src="../images/pearly-logo.svg" alt="Pearly Site Logo" />
-          <p class="site-description">
-            Our Dentist Cares For Your Pearly Whites.
-          </p>
-          <div class="icons">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-          </div>
+          <i class="fa-solid fa-copyright"></i> Pearly - 2025 All rights
+          reserved.
         </div>
-
+        <img src="../images/yellow-dot.svg" alt="Divider" />
         <div class="col">
-          <h2 class="list-header">Quick Links</h2>
-          <ul>
-            <li>
-              <img src="../images/yellow-dot.svg" class="yellow-dot" />
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <img src="../images/yellow-dot.svg" class="yellow-dot" /><a
-                href="#"
-                >About Us</a
-              >
-            </li>
-            <li>
-              <img src="../images/yellow-dot.svg" class="yellow-dot" /><a
-                href="#"
-                >Services</a
-              >
-            </li>
-            <li>
-              <img src="../images/yellow-dot.svg" class="yellow-dot" /><a
-                href="#"
-                >Book an Appointment</a
-              >
-            </li>
-            <li>
-              <img src="../images/yellow-dot.svg" class="yellow-dot" /><a
-                href="#"
-                >Contact</a
-              >
-            </li>
-          </ul>
+          <i class="fa-solid fa-location-dot"></i> 205, Port Washington Road
         </div>
-
+        <img src="../images/yellow-dot.svg" alt="Divider" />
+        <div class="col"><i class="fa-solid fa-phone"></i> 127 889 706</div>
+        <img src="../images/yellow-dot.svg" alt="Divider" />
         <div class="col">
-          <h2 class="list-header">Services</h2>
-          <ul>
-            <li>
-              <img src="../images/yellow-dot.svg" class="yellow-dot" />Whitening
-            </li>
-            <li>
-              <img src="../images/yellow-dot.svg" class="yellow-dot" />Bonding
-            </li>
-            <li>
-              <img src="../images/yellow-dot.svg" class="yellow-dot" />Implants
-            </li>
-            <li>
-              <img src="../images/yellow-dot.svg" class="yellow-dot" />Fillings
-            </li>
-            <li>
-              <img src="../images/yellow-dot.svg" class="yellow-dot" />Crowns
-            </li>
-            <li>
-              <img src="../images/yellow-dot.svg" class="yellow-dot" />Root
-              Canal
-            </li>
-          </ul>
-        </div>
-
-        <div class="col">
-          <h2 class="list-header">Support</h2>
-          <ul>
-            <li>
-              <img src="../images/yellow-dot.svg" class="yellow-dot" /><a
-                href="#"
-                >Terms of use</a
-              >
-            </li>
-            <li>
-              <img src="../images/yellow-dot.svg" class="yellow-dot" /><a
-                href="#"
-                >Privacy</a
-              >
-            </li>
-            <li>
-              <img src="../images/yellow-dot.svg" class="yellow-dot" /><a
-                href="#"
-                >FAQs</a
-              >
-            </li>
-            <li>
-              <img src="../images/yellow-dot.svg" class="yellow-dot" /><a
-                href="#"
-                >Help</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="col">
-          <h2>Get In Touch</h2>
-          <p>Subscribe Our Newsletter To Get Our Latest Updated News!</p>
-          <form class="newsletter-form">
-            <input type="text" placeholder="Your Email" />
-            <button class="send">
-              <i class="fa-solid fa-arrow-right"></i>
-            </button>
-          </form>
+          <i class="fa-solid fa-envelope"></i> johnsmith@pearly.com
         </div>
       </div>
-      <div class="extra-info-section">
-        <div class="row">
-          <div class="col">
-            <i class="fa-solid fa-copyright"></i> Pearly - 2025 All rights
-            reserved.
-          </div>
-          <img src="../images/yellow-dot.svg" alt="Divider" />
-          <div class="col">
-            <i class="fa-solid fa-location-dot"></i> 205, Port Washington Road
-          </div>
-          <img src="../images/yellow-dot.svg" alt="Divider" />
-          <div class="col"><i class="fa-solid fa-phone"></i> 127 889 706</div>
-          <img src="../images/yellow-dot.svg" alt="Divider" />
-          <div class="col">
-            <i class="fa-solid fa-envelope"></i> johnsmith@pearly.com
-          </div>
-        </div>
-      </div>
-    </footer>
-  </body>
+    </div>
+  </footer>
+  <script src="../js/get_available_time.js"></script>
+
+</body>
+
 </html>
