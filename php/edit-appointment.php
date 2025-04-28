@@ -9,7 +9,7 @@ if (!isset($_GET['id'])) {
   $appointment_id = $_GET['id'];
 
   $sql = "
-    SELECT a.appointment_id, u.first_name, u.last_name, a.service_name, a.appointment_date, a.status
+    SELECT a.appointment_id, u.first_name, u.last_name, a.service_name, a.appointment_date, a.status, a.appointment_start_time
     FROM appointments a
     JOIN users u ON a.user_id = u.user_id
     WHERE a.appointment_id = ?
@@ -82,14 +82,23 @@ $conn->close();
 
           <div class="field-container">
             <label for="date">Appointment Date</label>
-            <input type="date" id="date" name="date" class="booking-inputs" />
+            <input type="date" id="date" name="date" class="booking-inputs" value="<?= $appt['appointment_date'] ?>" />
             <i class="fa-solid fa-calendar-days booking-i"></i>
           </div>
           <div class="field-container">
             <label for="time">Appointment Time</label>
             <div class="custom-select">
               <select name="time" id="time">
-                <option value="">Select a time slot</option>
+                <?php if (!empty($appt['appointment_start_time'])): ?>
+                  <?php
+                  $formatted_time = date('g:i A', strtotime($appt['appointment_start_time']));
+                  ?>
+                  <option value="<?= $formatted_time ?>" selected>
+                    <?= $formatted_time ?>
+                  </option>
+                <?php else: ?>
+                  <option value="">Select a time slot</option>
+                <?php endif; ?>
               </select>
               <span class="custom-arrow"></span>
             </div>
@@ -112,9 +121,27 @@ $conn->close();
   </main>
   <script src="../js/get_available_time.js"></script>
   <script>
-    //handle cancel button
+    // Handle cancel button
     $('#cancelBtn').click(function() {
       window.location.href = '../html/admin-view-appointments.php';
+    });
+
+    // Handle date change to reload available times
+    $('#date').change(function() {
+      var selectedDate = $(this).val();
+      $.ajax({
+        url: 'get_available_times.php',
+        method: 'GET',
+        data: {
+          date: selectedDate
+        },
+        success: function(response) {
+          $('#time').html('<option value="">Select a time slot</option>' + response);
+        },
+        error: function() {
+          alert('Failed to load available times.');
+        }
+      });
     });
   </script>
 </body>

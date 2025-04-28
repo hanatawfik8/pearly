@@ -6,10 +6,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $first_name = $_POST['first_name'];
   $last_name = $_POST['last_name'];
   $service_name = $_POST['service'];
-  $appointment_date = $_POST['appointment_date'];
+  $appointment_date = $_POST['date'];
   $appointment_start_time = $_POST['appointment_time'];
   $status = $_POST['status'];
 
+  if (!empty($_POST['time'])) {
+    $appointment_start_time = $_POST['time'];
+  } else {
+    // Fetch old time from database if time field was empty
+    $stmt = $conn->prepare("SELECT appointment_start_time FROM appointments WHERE appointment_id = ?");
+    $stmt->bind_param("i", $appointment_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    $appointment_start_time = $row['appointment_start_time'];
+    $stmt->close();
+  }
+
+  $start_time_obj = DateTime::createFromFormat('g:i A', $appointment_start_time);  // 'g:i A' is 12-hour format (e.g., 4:00 PM)
+  if ($start_time_obj) {
+    $appointment_start_time = $start_time_obj->format('H:i:s');  // Convert to 24-hour format (H:i:s)
+  }
   // Calculate end time automatically (add 1 hour)
   $start = new DateTime($appointment_start_time);
   $end = clone $start;
