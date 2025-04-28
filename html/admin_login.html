@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./images/whitening.svg" />
+  <link rel="stylesheet" href="../css/forms.css" />
+  <script src="https://kit.fontawesome.com/32b721850a.js" crossorigin="anonymous"></script>
+  <title>Pearly - Log In</title>
+</head>
+
+<body>
+  <nav class="container">
+    <img src="../images/pearly-logo.svg" alt="Pearly Site Logo" />
+    <form action="">
+      <button type="submit" class="fa-solid fa-right-from-bracket log-out"></button>
+    </form>
+
+  </nav>
+  <main>
+    <div class="card">
+      <h1>Log In</h1>
+      <form action="../php/admin_login.php" method="post">
+        <div class="field-container">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter Your username" name="username" class="logEmail" />
+          <i class="logEmailIcon fa-solid"></i>
+          <div class="logEmailAlert alert"></div>
+        </div>
+        <div class="field-container">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter Your Password" name="password"
+            class="pass-fields logPassword" />
+          <i class="fa-solid fa-eye-slash passToggleIcon"></i>
+          <div class="logPassAlert alert"></div>
+        </div>
+        <button type="submit" name="submit">Log In</button>
+      </form>
+    </div>
+  </main>
+  <script src="./js/login.js"></script>
+</body>
+
+</html>
