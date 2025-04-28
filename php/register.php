@@ -19,9 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
-    
+
     if ($result && $result->num_rows > 0) {
-        echo "Email already registered.";
+        echo "<script>alert('This email is already registered.'); window.history.back();</script>";
         exit();
     }
 
@@ -44,4 +44,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
         echo "Something went wrong. Please try again.";
     }
 }
-?>
