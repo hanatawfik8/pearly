@@ -4,7 +4,7 @@ require_once '../includes/db_connection.php';
 $appointments = [];
 
 $sql = "
-  SELECT a.appointment_id, u.first_name, u.last_name, a.service_name, a.appointment_date, a.status
+  SELECT a.appointment_id, u.first_name, u.last_name, a.service_name, a.appointment_date, a.status, a.appointment_start_time
   FROM appointments a
   JOIN users u ON a.user_id = u.user_id
   ORDER BY a.appointment_date DESC
