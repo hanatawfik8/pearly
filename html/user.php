@@ -52,16 +52,15 @@ $appoint_result = $conn->query($appoint_sql);
       <a href="../index.html#services">Services</a>
     </ul>
     <div class="right">
-        <button class="contact">
-          <a href="mailto:">Contact Us</a>
-        </button>
-        <form action="">
-          <button
-            type="submit"
-            class="fa-solid fa-right-from-bracket log-out"
-          ></button>
-        </form>
-      </div>
+      <button class="contact">
+        <a href="mailto:">Contact Us</a>
+      </button>
+      <form action="">
+        <button
+          type="submit"
+          class="fa-solid fa-right-from-bracket log-out"></button>
+      </form>
+    </div>
   </nav>
   <div class="App-container">
     <div class="header">
@@ -107,7 +106,7 @@ $appoint_result = $conn->query($appoint_sql);
 
 
     <?php
-    $history_sql = "SELECT appointment_date, service_name, status FROM appointments 
+    $history_sql = "SELECT appointment_date, appointment_start_time, service_name, status FROM appointments 
                 WHERE user_id = $user_id ORDER BY appointment_date DESC";
     $history_result = $conn->query($history_sql);
 
@@ -119,6 +118,7 @@ $appoint_result = $conn->query($appoint_sql);
           <thead>
             <tr>
               <th>Date</th>
+              <th>Time</th>
               <th>Service</th>
               <th>Status</th>
             </tr>
@@ -127,6 +127,7 @@ $appoint_result = $conn->query($appoint_sql);
             <?php while ($row = $history_result->fetch_assoc()): ?>
               <tr>
                 <td><?= htmlspecialchars(date('F j, Y', strtotime($row['appointment_date']))) ?></td>
+                <td><?= date('g:i A', strtotime($row['appointment_start_time'])) ?></td>
                 <td><?= htmlspecialchars($row['service_name']) ?></td>
                 <td><?= htmlspecialchars($row['status']) ?></td>
               </tr>
