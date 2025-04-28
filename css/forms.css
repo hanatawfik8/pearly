@@ -228,19 +228,20 @@ select {
   font-family: inherit;
   padding: 0.4rem 2.5rem 0.4rem 1rem;
   border: 0;
-  background-color: var(--main-site-color);
-  color: white;
+  background-color: var(--sec-text-color);
+  color: var(--main-text-color);
   font-size: 0.9rem;
   font-weight: 600;
   border-radius: 2px;
   line-height: 1.5;
   outline: 0;
   cursor: pointer;
+  width: 100%;
 }
 
 .custom-select {
   position: relative;
-  width: fit-content;
+  width: 100%;
   margin: auto;
 }
 
@@ -251,7 +252,7 @@ select {
   display: block;
   height: 100%;
   width: 2rem;
-  background-color: var(--main-site-color);
+  background-color: var(--sec-text-color);
   pointer-events: none;
 }
 
@@ -266,10 +267,18 @@ select {
 .custom-arrow::before {
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
-  border-top: 7px solid var(--sec-text-color);
+  border-top: 7px solid var(--main-text-color);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.booking-card {
+  padding: 1.7rem 1.6rem;
+}
+
+.booking-card .field-container {
+  margin-bottom: 1.1rem;
 }
 
 /*  */
