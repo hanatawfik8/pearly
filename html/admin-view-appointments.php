@@ -44,7 +44,9 @@
               <td><?= date('Y-m-d h:i A', strtotime($appt['appointment_date'] . ' ' . $appt['appointment_start_time'])) ?></td>
 
               <td>
-                <?= htmlspecialchars($appt['status']) ?>
+                <div class="status">
+                  <span>Booked</span>
+                </div>
               </td>
               <td><a href="../php/edit-appointment.php?id=<?= $appt['appointment_id'] ?>"><button class="update-btn">Update</button></a></td>
             </tr>

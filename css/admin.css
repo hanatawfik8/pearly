@@ -71,7 +71,7 @@ tbody tr {
   transition: 0.2s ease-in;
 }
 
-tbody tr:nth-child(even) {
+tbody tr:nth-child(odd) {
   background-color: var(--sec-text-color);
 }
 
@@ -81,8 +81,8 @@ td {
 }
 
 .update-btn {
-  background-color: #ffba3b;
-  color: white;
+  background-color: transparent;
+  color: var(--main-site-color);
   width: auto;
   padding: 0.4rem 1rem;
   font-weight: 600;
@@ -91,55 +91,10 @@ td {
   margin-top: 0;
 }
 
-select {
-  appearance: none;
-  font-family: inherit;
-  padding: 0.4rem 2.5rem 0.4rem 1rem;
-  border: 0;
-  background-color: var(--main-site-color);
-  color: white;
-  font-size: 0.9rem;
-  font-weight: 600;
-  border-radius: 2px;
-  line-height: 1.5;
-  outline: 0;
-  cursor: pointer;
+.update-btn:hover {
+  text-decoration: underline;
 }
 
-option {
-  background-color: var(--sec-text-color);
-}
-
-.custom-select {
-  position: relative;
-  width: fit-content;
-  margin: auto;
-}
-
-.custom-arrow {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: block;
-  height: 100%;
-  width: 2rem;
-  background-color: var(--main-site-color);
-  pointer-events: none;
-}
-
-.custom-arrow::before,
-.custom-arrow::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-}
-
-.custom-arrow::before {
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-top: 7px solid var(--sec-text-color);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.status span {
+  font-weight: 500;
 }
