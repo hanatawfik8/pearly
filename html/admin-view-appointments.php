@@ -23,9 +23,9 @@
       <a href="#">Create Appointment</a>
     </ul>
     <form action="">
-    <button type="submit" class="fa-solid fa-right-from-bracket log-out"></button>
+      <button type="submit" class="fa-solid fa-right-from-bracket log-out"></button>
     </form>
-   
+
   </nav>
   <main class="container">
     <table>
@@ -43,8 +43,20 @@
         <?php if (!empty($appointments)): ?>
           <?php foreach ($appointments as $appt): ?>
             <tr>
-              <td><?= htmlspecialchars($appt['first_name'] . ' ' . $appt['last_name']) ?></td>
-              <td>01076522439</td>
+              <td><?php
+                  if (!empty($appt['first_name']) && !empty($appt['last_name'])) {
+                    echo htmlspecialchars($appt['first_name'] . ' ' . $appt['last_name']);
+                  } else {
+                    echo htmlspecialchars($appt['guest_name']);
+                  }
+                  ?></td>
+              <td><?php
+                  if (!empty($appt['guest_phone'])) {
+                    echo htmlspecialchars($appt['guest_phone']);
+                  } else {
+                    echo htmlspecialchars($appt['phone']);
+                  }
+                  ?></td>
               <td><?= htmlspecialchars($appt['service_name']) ?></td>
               <td><?= date('Y-m-d h:i A', strtotime($appt['appointment_date'] . ' ' . $appt['appointment_start_time'])) ?></td>
 
