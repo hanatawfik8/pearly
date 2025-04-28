@@ -51,7 +51,17 @@ $appoint_result = $conn->query($appoint_sql);
       <img loading="lazy" src="../images/yellow-dot.svg" alt="Divider" />
       <a href="../index.html#services">Services</a>
     </ul>
-    <button class="contact-home">Contact Us</button>
+    <div class="right">
+        <button class="contact">
+          <a href="mailto:">Contact Us</a>
+        </button>
+        <form action="">
+          <button
+            type="submit"
+            class="fa-solid fa-right-from-bracket log-out"
+          ></button>
+        </form>
+      </div>
   </nav>
   <div class="App-container">
     <div class="header">

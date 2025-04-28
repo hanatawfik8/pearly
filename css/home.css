@@ -141,6 +141,10 @@ body {
   line-height: 25px;
 }
 
+.home h1 {
+  text-align: left;
+}
+
 /*  */
 
 /* about us */

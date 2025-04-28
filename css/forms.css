@@ -281,6 +281,31 @@ select {
   margin-bottom: 1.1rem;
 }
 
+.log-out {
+  font-size: 1.5rem;
+  color: var(--third-text-color);
+  transition: 0.2s ease-in;
+  margin-left: 20px;
+  background-color: transparent;
+  outline: 0;
+  width: fit-content;
+  margin-top: 0rem;
+}
+
+.log-out:hover {
+  color: var(--main-site-color);
+  cursor: pointer;
+}
+
+button a {
+  color: inherit;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
 /*  */
 
 /* footer */

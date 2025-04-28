@@ -22,13 +22,17 @@
       <img src="../images/yellow-dot.svg" alt="Divider" />
       <a href="#">Create Appointment</a>
     </ul>
-    <i class="fa-solid fa-right-from-bracket log-out"></i>
+    <form action="">
+    <button type="submit" class="fa-solid fa-right-from-bracket log-out"></button>
+    </form>
+   
   </nav>
   <main class="container">
     <table>
       <thead>
         <tr>
           <th>Patient Name</th>
+          <th>Patient Phone</th>
           <th>Service</th>
           <th>Date & Time</th>
           <th>Status</th>
@@ -40,6 +44,7 @@
           <?php foreach ($appointments as $appt): ?>
             <tr>
               <td><?= htmlspecialchars($appt['first_name'] . ' ' . $appt['last_name']) ?></td>
+              <td>01076522439</td>
               <td><?= htmlspecialchars($appt['service_name']) ?></td>
               <td><?= date('Y-m-d h:i A', strtotime($appt['appointment_date'] . ' ' . $appt['appointment_start_time'])) ?></td>
 

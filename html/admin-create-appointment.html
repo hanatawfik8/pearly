@@ -5,57 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="../images/whitening.svg" />
     <link rel="stylesheet" href="../css/forms.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
     <script
       src="https://kit.fontawesome.com/32b721850a.js"
       crossorigin="anonymous"
     ></script>
-    <title>Pearly - Log In</title>
+    <title>Pearly - Create Appointment</title>
   </head>
   <body>
     <nav class="container">
       <img src="../images/pearly-logo.svg" alt="Pearly Site Logo" />
       <ul class="nav-links">
-        <a href="#">Home</a>
+        <a href="./admin-view-appointments.php">View Appointments</a>
         <img src="../images/yellow-dot.svg" alt="Divider" />
-        <a href="#">About Us</a>
-        <img src="../images/yellow-dot.svg" alt="Divider" />
-        <a href="#">Services</a>
+        <a href="#" class="active-link">Create Appointment</a>
       </ul>
-      <button class="contact">Contact Us</button>
+      <form action="">
+        <button
+          type="submit"
+          class="fa-solid fa-right-from-bracket log-out"
+        ></button>
+      </form>
     </nav>
     <main>
-      <div class="card">
-        <h1>Log In</h1>
-        <form action="/pearly/php/login.php" method="POST">
+      <div class="card booking-card">
+        <h1>Book An Appointment</h1>
+        <form action="../php/booking.php" method="POST">
           <div class="field-container">
-            <label for="email">Email Address</label>
+            <label for="patient-first-name">Patient First Name</label>
             <input
-              type="email"
-              id="email"
-              placeholder="Enter Your Email"
-              name="email"
-              class="logEmail"
+              type="text"
+              id="patient-first-name"
+              placeholder="Enter Patient First Name"
+              name="patient-first-name"
             />
-            <i class="logEmailIcon fa-solid"></i>
-            <div class="logEmailAlert alert"></div>
           </div>
           <div class="field-container">
-            <label for="password">Password</label>
+            <label for="patient-last-name">Patient Last Name</label>
             <input
-              type="password"
-              id="password"
-              placeholder="Enter Your Password"
-              name="password"
-              class="pass-fields logPassword"
+              type="text"
+              id="patient-last-name"
+              placeholder="Enter Patient Last Name"
+              name="patient-last-name"
             />
-            <i class="fa-solid fa-eye-slash passToggleIcon"></i>
-            <div class="logPassAlert alert"></div>
           </div>
-          <button type="submit" name="submit">Log In</button>
+          <div class="field-container">
+            <label for="patient-phone">Patient Phone Number</label>
+            <input
+              type="tel"
+              id="patient-phone"
+              placeholder="Enter Patient Phone Number"
+              name="patient-phone"
+            />
+          </div>
+          <div class="field-container">
+            <label for="date">Appointment Date</label>
+            <input type="date" id="date" name="date" class="booking-inputs" />
+            <i class="fa-solid fa-calendar-days booking-i"></i>
+          </div>
+          <div class="field-container">
+            <label for="time">Appointment Time</label>
+            <div class="custom-select">
+              <select name="time" id="time">
+                <option value="">Select a time slot</option>
+              </select>
+              <span class="custom-arrow"></span>
+            </div>
+          </div>
+          <div class="field-container">
+            <label>Service Type</label>
+            <div class="custom-select">
+              <select name="service" id="service">
+                <option value="Whitening">Whitening</option>
+                <option value="Bonding">Bonding</option>
+                <option value="Implants">Implants</option>
+                <option value="Filling">Filling</option>
+                <option value="Crowns">Crowns</option>
+                <option value="Root Canal">Root Canal</option>
+              </select>
+              <span class="custom-arrow"></span>
+            </div>
+          </div>
+
+          <button type="submit">Book Now</button>
         </form>
-        <span class="to-login-or-signup login-span"
-          >Don't have an account? <a href="./register.html">Sign Up</a></span
-        >
       </div>
     </main>
     <footer class="container">
@@ -192,6 +225,5 @@
         </div>
       </div>
     </footer>
-    <script src="../js/login.js"></script>
   </body>
 </html>
