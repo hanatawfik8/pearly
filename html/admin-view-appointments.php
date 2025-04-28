@@ -50,7 +50,7 @@
 
               <td>
                 <div class="status">
-                  <span>Booked</span>
+                  <span><?= htmlspecialchars($appt['status']) ?></span>
                 </div>
               </td>
               <td><a href="../php/edit-appointment.php?id=<?= $appt['appointment_id'] ?>"><button class="update-btn">Update</button></a></td>
