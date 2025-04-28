@@ -87,7 +87,7 @@ $appoint_result = $conn->query($appoint_sql);
           </div>
         </div>
         <div class="action-buttons">
-          <button class="view-details-btn">View Details</button>
+          <a href="./booking.html"><button class="view-details-btn">Book Appointment</button></a>
           <form action="../php/cancel-appointment.php" method="POST" onsubmit="return confirm('Are you sure you want to cancel this appointment?');" style="display:inline-block">
             <input type="hidden" name="appointment_id" value="<?= $appointment['appointment_id'] ?>" />
             <button type="submit" class="cancel-appointment-btn">Cancel Appointment</button>
