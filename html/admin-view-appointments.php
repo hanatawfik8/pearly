@@ -44,14 +44,7 @@
               <td><?= date('Y-m-d h:i A', strtotime($appt['appointment_date'] . ' ' . $appt['appointment_start_time'])) ?></td>
 
               <td>
-                <div class="custom-select">
-                  <select name="status" id="status">
-                    <option value="booked" <?= $appt['status'] === 'booked' ? 'selected' : '' ?>>Booked</option>
-                    <option value="completed" <?= $appt['status'] === 'completed' ? 'selected' : '' ?>>Completed</option>
-                    <option value="cancelled" <?= $appt['status'] === 'cancelled' ? 'selected' : '' ?>>Cancelled</option>
-                  </select>
-                  <span class="custom-arrow"></span>
-                </div>
+                <?= htmlspecialchars($appt['status']) ?>
               </td>
               <td><a href="../php/edit-appointment.php?id=<?= $appt['appointment_id'] ?>"><button class="update-btn">Update</button></a></td>
             </tr>
