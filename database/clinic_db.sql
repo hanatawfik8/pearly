@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2025 at 03:31 PM
+-- Generation Time: Apr 28, 2025 at 09:59 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -49,22 +49,26 @@ INSERT INTO `admins` (`admin_id`, `username`, `email`, `password`) VALUES
 
 CREATE TABLE `appointments` (
   `appointment_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
   `appointment_date` date DEFAULT NULL,
   `appointment_start_time` time DEFAULT NULL,
   `appointment_end_time` time DEFAULT NULL,
   `service_name` varchar(100) NOT NULL,
   `status` enum('booked','cancelled','completed') DEFAULT 'booked',
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `guest_name` varchar(255) DEFAULT NULL,
+  `guest_phone` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `appointments`
 --
 
-INSERT INTO `appointments` (`appointment_id`, `user_id`, `appointment_date`, `appointment_start_time`, `appointment_end_time`, `service_name`, `status`, `created_at`) VALUES
-(23, 4, '2025-04-28', '16:00:00', '17:00:00', 'Whitening', 'booked', '2025-04-28 12:43:39'),
-(24, 4, '2025-04-28', '17:00:00', '18:00:00', 'Bonding', 'booked', '2025-04-28 12:44:01');
+INSERT INTO `appointments` (`appointment_id`, `user_id`, `appointment_date`, `appointment_start_time`, `appointment_end_time`, `service_name`, `status`, `created_at`, `guest_name`, `guest_phone`) VALUES
+(25, 4, '2025-04-28', '16:00:00', '17:00:00', 'Whitening', 'booked', '2025-04-28 13:59:26', NULL, NULL),
+(26, 4, '2025-04-28', '17:00:00', '18:00:00', 'Bonding', 'booked', '2025-04-28 13:59:49', NULL, NULL),
+(29, NULL, '2025-04-28', '18:00:00', '19:00:00', 'Root Canal', 'booked', '2025-04-28 19:22:37', 'guest user', '01038593858'),
+(30, NULL, '2025-04-28', '19:00:00', '20:00:00', 'Filling', 'booked', '2025-04-28 19:58:17', 'Guest User', '01943859390');
 
 -- --------------------------------------------------------
 
@@ -105,7 +109,8 @@ INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, 
 (1, 'John', 'Doe', 'john@example.com', 'John@123', '1234567890'),
 (2, 'Ahmed', 'Mohamed', 'jane@example.com', 'test123', '0987654321'),
 (3, 'Samia', 'Ahmed', 'ali@example.com', 'test123', '1122334455'),
-(4, 'Rama', 'Hany', 'ramio146@gmail.com', '$2y$10$XTACpfW7K69iFItrQJ4iiOTMkeGfkCzcc1eBrXLKaV8Of3dVRndWu', '01020248506');
+(4, 'Sama', 'Hany', 'ramio146@gmail.com', '$2y$10$XTACpfW7K69iFItrQJ4iiOTMkeGfkCzcc1eBrXLKaV8Of3dVRndWu', '01020248506'),
+(5, 'any', 'anyone', 'someone@gmail.com', '$2y$10$9fizf85PAYGbDKSoKv7vyubLAwgER0/5EcMF9J6Iu2i36n4VHAFi6', '01043850305');
 
 --
 -- Indexes for dumped tables
@@ -154,7 +159,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `contact_messages`
@@ -166,7 +171,7 @@ ALTER TABLE `contact_messages`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
